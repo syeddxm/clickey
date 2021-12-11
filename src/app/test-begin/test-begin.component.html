@@ -1,0 +1,42 @@
+<h1 class="text-center">{{header}}</h1>
+<h2 class="text-center">{{message}}</h2>
+<div *ngIf="!active">
+    <h2>Now you will begin the test with a longer phrase</h2>
+
+    <p>You will be given one of the keyboard styles (QWERTY vs EARDU), and one mode (scanning vs recur</p>
+    
+    <p>Remember, there is no way to backspace, just continue to writing the next key</p>
+
+</div>
+<div>
+    <app-test *ngIf="curr == 0" [target]="phrase" [practice]="false">
+        <app-qwerty-scan></app-qwerty-scan>
+    </app-test>
+    <app-test *ngIf="curr == 1" [target]="phrase" [practice]="false">
+        <app-qwerty-recur></app-qwerty-recur>
+    </app-test>
+    <app-test *ngIf="curr == 2" [target]="phrase" [practice]="false">
+        <app-freq-scan></app-freq-scan>
+    </app-test>
+    <app-test *ngIf="curr == 3" [target]="phrase" [practice]="false">
+        <app-freq-recur></app-freq-recur>
+    </app-test>
+    <app-test *ngIf="curr == 4" [target]="phrase" [practice]="false">
+        <app-qwerty-scan></app-qwerty-scan>
+    </app-test>
+    <app-test *ngIf="curr == 5" [target]="phrase" [practice]="false">
+        <app-qwerty-recur></app-qwerty-recur>
+    </app-test>
+    <app-test *ngIf="curr == 6" [target]="phrase" [practice]="false">
+        <app-freq-scan></app-freq-scan>
+    </app-test>
+    <app-test *ngIf="curr == 7" [target]="phrase" [practice]="false">
+        <app-freq-recur></app-freq-recur>
+    </app-test>
+
+</div>
+
+
+<div *ngIf="testEnded">
+    <button  mat-raised-button color="primary" (click)="nextTest()">Next</button>
+</div>

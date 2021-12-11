@@ -1,0 +1,23 @@
+<h1 class="text-center">Tutorial</h1>
+
+<div class="center">
+    
+    <div>
+        <button *ngIf="!tutorialActive" mat-raised-button color="primary" (click)="startTutorial()">Start Tutorial</button>
+    </div>
+    <h2 *ngIf="tutorialActive">{{message}}</h2>
+
+    <div>
+        <button *ngIf="tutorialEnded" mat-raised-button color="primary" (click)="next()">Next</button>
+    </div>
+
+    <div class="float-right">
+        <mat-progress-spinner
+            class="example-margin"
+            color="primary"
+            mode="determinate"
+            [value]="spinner / 5 * 100">
+        </mat-progress-spinner>
+        <h2>{{spinner}} / 5</h2>
+    </div>
+</div>

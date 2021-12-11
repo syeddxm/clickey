@@ -1,0 +1,9 @@
+<div class="keyboard-container">
+    <div class="keyboard" *ngIf="this.mode == this.mode1">
+        <div *ngFor="let left of this.keys; let i = index " class="key-row" [ngClass]="currentVisible == i && stages.s1 == -1? 'selected-row': ''">
+            <div *ngFor="let key of left; let j = index" class="key" [ngClass]="(currentVisible == j && stages.s1 == i ? 'selected-key ': '') + key">
+                {{key}}
+            </div>
+        </div>
+    </div>
+</div>

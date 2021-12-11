@@ -1,0 +1,59 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.keyboard.recursive {
+    display: flex;
+    flex-direction: column;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+}
+
+
+.key-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.key {
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}
+
+.enter, .backspace, .caps_lock, .shift {
+    width: 50%;
+}
+
+
+.selected-side .key, .selected-row .key{
+    background: yellow;
+}
+
+.selected-key {
+    background: yellowgreen;
+}
+
+.section-lvl-1 {
+    display: flex;
+}
+
+.section-lvl-3 {
+    display: flex;
+}
+
+
+.side-0 .key, .left{
+    background: yellow;
+}
+
+.side-1 .key, .right{
+    background: lightblue;
+}

@@ -1,0 +1,13 @@
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 100px;
+    height: calc(100% - 64px - 100px);
+}
+
+mat-card {
+    flex-grow: 1;
+    height: 100%;
+}
+

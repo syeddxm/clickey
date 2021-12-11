@@ -1,0 +1,19 @@
+<div class="keyboard-container">
+    <div class="keyboard">
+        <div *ngFor="let row of this.data; let i = index " class="key-row" >
+            <div *ngFor="let key of this.keys[i]; let j = index" 
+                class="key" 
+                [ngClass]="(
+                    (inputMode && (!upDown && !lastCol && row.s <= j && j < (row.s + row.e) / 2)) ||
+                    (inputMode && (upDown && i < rowPos.m && row.s <= j && j < row.e))
+                    ? 'left ': (
+                    (inputMode && !upDown && !lastCol && (row.s + row.e) / 2 <= j && j < row.e) ||
+                    (inputMode && (upDown && i >= rowPos.m && row.s <= j && j < row.e)))
+                    ? 'right ': 
+                    '') + key">
+                {{key}}
+            </div>
+        </div>
+    </div>
+
+</div>

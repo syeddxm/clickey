@@ -1,0 +1,63 @@
+<div class="keyboard-container">
+    <div class="keyboard recursive">
+        <div class="keyboard-row">
+            <div 
+                *ngFor="let key of this.r1.k; let i = index;" 
+                class="key"
+                [ngClass]="
+                inputMode == true && 
+                this.r1.s <= i &&  i < (this.r1.s + this.r1.e) / 2 ?  'left':
+                inputMode == true &&
+                (this.r1.s + this.r1.e) / 2  <= i &&  i < this.r1.e ?  'right': 
+                ''"
+            >
+                {{key}}
+            </div>                    
+        </div>
+        <div class="keyboard-row">
+            <div 
+                *ngFor="let key of this.r2.k; let i = index;" 
+                class="key"
+                [ngClass]="
+                inputMode == true && 
+                (this.r2.s <= i &&  
+                i  < (this.r2.s + this.r2.e) / 2 &&
+                this.r2.l > 1) || 
+                (this.r2.s <= i &&
+                i < (this.r2.s + this.r2.e) / 2 &&
+                this.r2.l < 2 &&
+                bottomStage) ?  'left':
+
+                inputMode == true &&
+                ((this.r2.s + this.r2.e) / 2  <= i &&  i < this.r2.e ||
+                this.r2.s <= i &&
+                i < (this.r2.s + this.r2.e) / 2 &&
+                this.r2.l < 2)
+                ?  'right': 
+                ''"
+            >
+                {{key}}
+            </div>                    
+        </div>
+        <div class="keyboard-row">
+            <div 
+                *ngFor="let key of this.r3.k; let i = index;" 
+                class="key"
+                [ngClass]="
+                inputMode == true && 
+                this.r3.s <= i &&  i < (this.r3.s + this.r3.e) / 2 &&
+                this.r2.l > 1 ?  'left':
+                
+                inputMode == true &&
+                ((this.r3.s + this.r3.e) / 2  <= i &&  i < this.r3.e ||
+                this.r3.s <= i &&
+                i < (this.r3.s + this.r3.e) / 2 &&
+                this.r3.l < 2)
+                ?  'right': 
+                ''"
+            >
+                {{key}}
+            </div>                    
+        </div>
+    </div>
+</div>

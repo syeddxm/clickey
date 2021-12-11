@@ -1,0 +1,27 @@
+<h1 class="text-center">QWERTY SCAN TUTORIAL</h1>
+
+<div *ngIf="!active">
+    <h2>Now you will be walked through 4 different keyboard and scanning methods</h2>
+
+    <h3>First, you will practice using the scanning method on the QWERTY keyboard</h3>
+
+    <p>1. Press either Shift key to begin</p>
+    <p>2. The keyboard will begin scanning downwards</p>
+    <p>3. When highlighted row contains desired key, press either shift again</p>
+    <p>4. The keyboard will begin scanning from left to right</p>
+    <p>5. When desired is highlighted, press either shift again</p>
+    <p>6. Press either shift key to begin again</p>
+    
+    <h3>There is no way to backspace, just continue to writing the next key</h3>
+
+</div>
+<div>
+    <app-test target="I_AM" [practice]="true">
+        <app-qwerty-scan></app-qwerty-scan>
+    </app-test>
+</div>
+
+
+<div *ngIf="testPassed">
+    <button  mat-raised-button color="primary" (click)="next()">Next</button>
+</div>

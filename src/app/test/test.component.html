@@ -1,0 +1,22 @@
+
+<div *ngIf="showTest">
+    <button  mat-raised-button color="primary" (click)="startTest()">Start</button>
+</div>
+
+<div class="text-center target">
+    <span *ngFor="let item of targetArr; let i = index" 
+    [ngClass]="curr + 1  == i ? 'currentLetter': 'futureLetter'">
+        {{item}}
+    </span>
+</div>
+
+<div class="text-center target">
+    <span *ngFor="let item of inputArr; let i = index" 
+    [ngClass]="curr + 1 == i ? '': 'futureLetter' ">
+        {{'*' == item? '*': item}}
+    </span>
+</div>
+
+<div  *ngIf="!showTest">
+    <ng-content></ng-content>
+</div>

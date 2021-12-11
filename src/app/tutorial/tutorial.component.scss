@@ -1,0 +1,19 @@
+.float-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    h2 {
+        position: absolute;
+        top: 35%;
+        left: 30%;
+    }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    flex-direction: column;
+}

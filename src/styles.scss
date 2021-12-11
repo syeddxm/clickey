@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.text-center {
+    text-align: center;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.target {
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.currentLetter {
+    border-bottom: solid 5px black;
+}
+
+.futureLetter {
+    color: #868686;
+}
+
+.keyboard-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.key {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

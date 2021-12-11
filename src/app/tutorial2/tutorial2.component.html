@@ -1,0 +1,23 @@
+<h1 class="text-center">QWERTY RECURSION TUTORIAL</h1>
+
+<div *ngIf="!active">
+    <h2>Now you will be walked through 4 different keyboard and scanning methods</h2>
+
+    <h3>Next, you will practice using the <b>recursion</b> method on the QWERTY keyboard</h3>
+
+    <p>2. Press either Shift key to begin</p>
+    <p>3. The keyboard will highlight blue and yellow sections</p>
+    <p>4. Press the <b>left shift key</b> to select the yellow section</p>
+    <p>5. Press the <b>right shift key</b> to select the blue section</p>
+    <p>6. Keep making selections until desire
+</div>
+<div>
+    <app-test target="I_AM" [practice]="true">
+        <app-qwerty-recur></app-qwerty-recur>
+    </app-test>
+</div>
+
+
+<div *ngIf="testPassed">
+    <button  mat-raised-button color="primary" (click)="next()">Next</button>
+</div>
