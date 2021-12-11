@@ -11,13 +11,14 @@ export class TestBeginComponent implements OnInit {
   testEnded = false;
   active = false;
   phrase = ""
-  header = ""
+  header = "BEGINNING TEST"
   message = ""
   curr = -1;
 
+  count = 1;
   phrases = ["WHAT_A_BEAUTIFUL_DAY_IT_IS", "BETWEEN_A_ROCK_AND_A_HARD_PLACE"]
 
-  headers = ['SCAN', 'RECURSION']
+  headers = ['SCAN', 'YELLOW BLUE']
   messages = ['Use either shift key', 'Left shift key to select yellow, Right Shift key to select blue'];
 
   constructor(private testService: TestService) { }
@@ -25,11 +26,13 @@ export class TestBeginComponent implements OnInit {
   ngOnInit(): void {
     this.testService.testActive.subscribe(val => {
       this.active = val;
+
     });
 
     this.testService.beginTest();
 
     this.testService.currTest.subscribe(val => {
+      this.count = val + 1;
       this.curr = this.testService.testOrder[val];
       this.phrase = this.phrases[this.curr < 4? 0: 1];
       this.header = this.headers[this.curr % 2]

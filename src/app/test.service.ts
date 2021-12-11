@@ -55,14 +55,16 @@ export class TestService {
       let curr = this.testOrder[this._currTest.value];
       let kspc = this.keyStrokes / this.length;
       let msd = this.MSD(this._input.value, this.target);
-      let errorRate = msd / (this.target.length) * 100      
-      if(this._currTest.value >= 7) {
+      let errorRate = msd / (this.target.length) * 100;
+
+      if(this._currTest.value == 7) {
         this._currTest.next(this._currTest.value +  1);
+        this.data.push([curr, this.target.length, this.timeElapsed, kspc, msd, errorRate])
         this._testActive.next(false);      
         this.downloadData();
       } else {
         this.data.push([curr, this.target.length, this.timeElapsed, kspc, msd, errorRate])
-        
+        console.log("NEXT TEST");
         this._currTest.next(this._currTest.value +  1);
       }
     }      
@@ -101,6 +103,7 @@ export class TestService {
 
   beginTest(){    
     this.shuffleArray(this.testOrder);
+    console.log(this.testOrder);
     this._currTest.next(this._currTest.value + 1)
     this.data = [['test_number', 'length', 'time', 'kspc', 'msd', 'errorRate']];
   }
